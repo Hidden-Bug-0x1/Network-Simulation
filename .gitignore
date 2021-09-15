@@ -1,3 +1,7 @@
+bins
+bins/*
+objs
+
 # Prerequisites
 *.d
 
