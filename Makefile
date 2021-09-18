@@ -1,15 +1,11 @@
-CC=clang
 CXX=clang++
-CFLAGS=-Wall -g
 CXXFLAGS=-Wall -g
 
 SRC=src
 OBJ=objs
 
-CSRCS=$(wildcard $(SRC)/*.c)
 CPPSRCS=$(wildcard $(SRC)/*.cpp)
 
-COBJS=$(patsubst $(SRC)/%.c, $(OBJ)/%.o, $(CSRCS)) 
 CPPOBJS=$(patsubst $(SRC)/%.cpp, $(OBJ)/%.o, $(CPPSRCS))
 
 BIN=bins
@@ -25,7 +21,6 @@ $(CPPOBJS): $(CPPSRCS)
 	$(CXX) $(CXXFLAGS) -c -o $@ $<
 
 run:
-	@echo "Program output:"
 	@$(BIN)/./$(OUT)
 
 clean:
